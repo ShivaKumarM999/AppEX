@@ -6,27 +6,27 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#password').val("<%=password.Text%>");
+            $('#MainContent_password').val("<%=password.Text%>");
 
             function pwdCheck() {
-                var pwd = $("#password").val();
+                var pwd = $("#MainContent_password").val();
                 debugger
                 var reg = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[#$%^&*()]).{8,20}$/
                 if (pwd == "") {
 
                 }
                 else if (!(reg.test(pwd))) {
-                    $("#passwordError").show()
-                    $("#passwordError").text("Please enter valid Password, should contain atleast one Upper & Lower character, Digit and Special character")
+                    $("#MainContent_passwordError").show()
+                    $("#MainContent_passwordError").text("Please enter valid Password, should contain atleast one Upper & Lower character, Digit and Special character")
                     debugger
                 }
                 else {
-                    $("#passwordError").show();
-                    $("#passwordError").text("")
+                    $("#MainContent_passwordError").show();
+                    $("#MainContent_passwordError").text("")
                 }
             }
-            $("#password").focusout(pwdCheck);
-            $("#login").click(pwdCheck);
+            $("#MainContent_password").focusout(pwdCheck);
+            $("#MainContent_register").click(pwdCheck);
         });
     </script>
 </asp:Content>
